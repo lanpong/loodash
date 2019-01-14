@@ -7,7 +7,7 @@
  * var array = [1, 2, 3];
  * reverse(array);
  * // => [3, 2, 1]
- * console.log();
+ * console.log(array);
  * // => [3, 2, 1]
  */
 function reverse(array) {
