@@ -1,4 +1,5 @@
 /**
+ * 替换 string 字符串中匹配的 pattern 为给定的 replacement
  * @param {string} [string='']
  * @param {RegExp|string} pattern
  * @param {Function|string} replacement
