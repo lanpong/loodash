@@ -12,12 +12,24 @@
  * 
  * isMatch(object, {'b': 1})
  * // => false
+ * 
+ * isMatch({"a":1,"b":{"c":1}},{"b":{"c":1}})
+ * // => true
  */
 function isMatch(object, source) {
-    for (let key in source) {
-        if (object[key] !== source[key]) {
-            return false;
+    for (let key in object) {
+        if (key in source) {
+            if (object[key] !== source[key]) {
+                if (typeof(object[key]) == 'object') {
+                    return isMatch(object[key], source[key]);
+                } else {
+                    return false;
+                }
+            } else {
+                return true;
+            }
         }
     }
-    return true;
 }
+
+export default isMatch;
