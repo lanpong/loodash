@@ -10,7 +10,7 @@
  */
 function replace() {
     var args = arguments;
-    var string = toString(args[0]);
+    var string = args[0].toString();
 
     return args.length < 3 ? string : string.replace(args[1], args[2]);
 }
