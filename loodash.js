@@ -6017,10 +6017,12 @@
         /*---------------------------Math---------------------------*/
 
         /**
+         * 两个数相加。
+         * 
          * @category Math
-         * @param {number} augend The first number in an addition.
-         * @param {number} addend The second number in an addition.
-         * @returns {number} Returns the total.
+         * @param {number} augend 相加的第一个数
+         * @param {number} addend 第二个数
+         * @returns {number} 返回总和
          * @example
          *
          * _.add(6, 4);
@@ -6031,10 +6033,12 @@
         }
 
         /**
+         * 根据 precision（精度） 向上舍入 number。
+         * 
          * @category Math
-         * @param {number} number The number to round up.
-         * @param {number} [precision=0] The precision to round up to.
-         * @returns {number} Returns the rounded up number.
+         * @param {number} number 要向上舍入的值
+         * @param {number} [precision=0] 向上舍入的精度
+         * @returns {number} 返回向上舍入的值
          * @example
          *
          * _.ceil(4.006);
@@ -6046,13 +6050,18 @@
          * _.ceil(6040, -2);
          * // => 6100
          */
-        var ceil = createRound('ceil');
+        function ceil(number, precision=0) {
+            var temp = Math.pow(10, precision);
+            return Math.ceil(number * temp) / temp;
+        }
 
         /**
+         * 两个数相除。
+         * 
          * @category Math
-         * @param {number} dividend The first number in a division.
-         * @param {number} divisor The second number in a division.
-         * @returns {number} Returns the quotient.
+         * @param {number} dividend 相除的第一个数
+         * @param {number} divisor 相除的第二个数
+         * @returns {number} 返回商数
          * @example
          *
          * _.divide(6, 4);
@@ -6063,10 +6072,12 @@
         }
 
         /**
+         * 根据 precision（精度） 向下舍入 number。
+         * 
          * @category Math
-         * @param {number} number The number to round down.
-         * @param {number} [precision=0] The precision to round down to.
-         * @returns {number} Returns the rounded down number.
+         * @param {number} number 要向下舍入的值
+         * @param {number} [precision=0] 向下舍入的精度
+         * @returns {number} 返回向下舍入的值
          * @example
          *
          * _.floor(4.006);
@@ -6078,12 +6089,18 @@
          * _.floor(4060, -2);
          * // => 4000
          */
-        var floor = createRound('floor');
+        function floor(number, precision=0) {
+            var temp = Math.pow(10, precision);
+            return Math.floor(number * temp) / temp;
+        }
 
         /**
+         * 计算 array 中的最大值。
+         * 如果 array 是空的或者假值将会返回 undefined。
+         * 
          * @category Math
-         * @param {Array} array The array to iterate over.
-         * @returns {*} Returns the maximum value.
+         * @param {Array} array 要迭代的数组
+         * @returns {*} 返回最大的值
          * @example
          *
          * _.max([4, 2, 8, 6]);
@@ -6093,14 +6110,17 @@
          * // => undefined
          */
         function max(array) {
+            return (array && array.length) ? array.sort((a, b) => b - a)[0] : undefined;
         }
 
         /**
+         * 这个方法类似 `_.max` 除了它接受 iteratee 来调用 array 中的每一个元素，来生成其值排序的标准。
+         * iteratee 会调用1个参数: (value)。
+         * 
          * @category Math
-         * @param {Array} array The array to iterate over.
-         * @param {Array|Function|Object|string} [iteratee=_.identity]
-         *  The iteratee invoked per element.
-         * @returns {*} Returns the maximum value.
+         * @param {Array} array 要迭代的数组
+         * @param {Array|Function|Object|string} [iteratee=_.identity] 调用每个元素的迭代函数
+         * @returns {*} 返回最大的值
          * @example
          *
          * var objects = [{ 'n': 1 }, { 'n': 2 }];
@@ -6108,7 +6128,6 @@
          * _.maxBy(objects, function(o) { return o.n; });
          * // => { 'n': 2 }
          *
-         * // The `_.property` iteratee shorthand.
          * _.maxBy(objects, 'n');
          * // => { 'n': 2 }
          */
