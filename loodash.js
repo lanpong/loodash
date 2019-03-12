@@ -5160,6 +5160,7 @@
          * // => ['a', 'b']
          */
         function split(string, separator, limit) {
+            return string.split(separator, limit);
         }
 
         /**
@@ -6020,9 +6021,9 @@
          * 两个数相加。
          * 
          * @category Math
-         * @param {number} augend 相加的第一个数
-         * @param {number} addend 第二个数
-         * @returns {number} 返回总和
+         * @param {number} augend 相加的第一个数。
+         * @param {number} addend 第二个数。
+         * @returns {number} 返回总和。
          * @example
          *
          * _.add(6, 4);
@@ -6036,9 +6037,9 @@
          * 根据 precision（精度） 向上舍入 number。
          * 
          * @category Math
-         * @param {number} number 要向上舍入的值
-         * @param {number} [precision=0] 向上舍入的精度
-         * @returns {number} 返回向上舍入的值
+         * @param {number} number 要向上舍入的值。
+         * @param {number} [precision=0] 向上舍入的精度。
+         * @returns {number} 返回向上舍入的值。
          * @example
          *
          * _.ceil(4.006);
@@ -6059,9 +6060,9 @@
          * 两个数相除。
          * 
          * @category Math
-         * @param {number} dividend 相除的第一个数
-         * @param {number} divisor 相除的第二个数
-         * @returns {number} 返回商数
+         * @param {number} dividend 相除的第一个数。
+         * @param {number} divisor 相除的第二个数。
+         * @returns {number} 返回商数。
          * @example
          *
          * _.divide(6, 4);
@@ -6075,9 +6076,9 @@
          * 根据 precision（精度） 向下舍入 number。
          * 
          * @category Math
-         * @param {number} number 要向下舍入的值
-         * @param {number} [precision=0] 向下舍入的精度
-         * @returns {number} 返回向下舍入的值
+         * @param {number} number 要向下舍入的值。
+         * @param {number} [precision=0] 向下舍入的精度。
+         * @returns {number} 返回向下舍入的值。
          * @example
          *
          * _.floor(4.006);
@@ -6099,8 +6100,8 @@
          * 如果 array 是空的或者假值将会返回 undefined。
          * 
          * @category Math
-         * @param {Array} array 要迭代的数组
-         * @returns {*} 返回最大的值
+         * @param {Array} array 要迭代的数组。
+         * @returns {*} 返回最大的值。
          * @example
          *
          * _.max([4, 2, 8, 6]);
@@ -6118,9 +6119,9 @@
          * iteratee 会调用1个参数: (value)。
          * 
          * @category Math
-         * @param {Array} array 要迭代的数组
-         * @param {Array|Function|Object|string} [iteratee=_.identity] 调用每个元素的迭代函数
-         * @returns {*} 返回最大的值
+         * @param {Array} array 要迭代的数组。
+         * @param {Array|Function|Object|string} [iteratee=_.identity] 调用每个元素的迭代函数。
+         * @returns {*} 返回最大的值。
          * @example
          *
          * var objects = [{ 'n': 1 }, { 'n': 2 }];
@@ -6135,23 +6136,28 @@
         }
 
         /**
+         * 计算 array 的平均值。
+         * 
          * @category Math
-         * @param {Array} array The array to iterate over.
-         * @returns {number} Returns the mean.
+         * @param {Array} array 要迭代的数组。
+         * @returns {number} 返回平均值。
          * @example
          *
          * _.mean([4, 2, 8, 6]);
          * // => 5
          */
         function mean(array) {
+            return array.reduce((a, b) => a + b) /array.length;
         }
 
         /**
+         * 这个方法类似 `_.mean`，除了它接受 iteratee 来调用 array中的每一个元素，来生成其值排序的标准。
+         * iteratee 会调用1个参数: (value) 。
+         * 
          * @category Math
-         * @param {Array} array The array to iterate over.
-         * @param {Array|Function|Object|string} [iteratee=_.identity]
-         *  The iteratee invoked per element.
-         * @returns {number} Returns the mean.
+         * @param {Array} array 要迭代的数组。
+         * @param {Array|Function|Object|string} [iteratee=_.identity] 调用每个元素的迭代函数。
+         * @returns {number} 返回平均值。
          * @example
          *
          * var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
@@ -6159,7 +6165,6 @@
          * _.meanBy(objects, function(o) { return o.n; });
          * // => 5
          *
-         * // The `_.property` iteratee shorthand.
          * _.meanBy(objects, 'n');
          * // => 5
          */
@@ -6167,9 +6172,11 @@
         }
 
         /**
+         * 计算 array 中的最小值。如果 array 是 空的或者假值将会返回 undefined。
+         * 
          * @category Math
-         * @param {Array} array The array to iterate over.
-         * @returns {*} Returns the minimum value.
+         * @param {Array} array 要迭代的数组。
+         * @returns {*} 返回最小的值。
          * @example
          *
          * _.min([4, 2, 8, 6]);
@@ -6179,14 +6186,17 @@
          * // => undefined
          */
         function min(array) {
+            return (array && array.length) ? array.sort((a, b) => a - b)[0] : undefined;
         }
 
         /**
+         * 这个方法类似 `_.min` 除了它接受 iteratee 来调用 array中的每一个元素，来生成其值排序的标准。
+         * iteratee 会调用1个参数: (value) 。
+         * 
          * @category Math
-         * @param {Array} array The array to iterate over.
-         * @param {Array|Function|Object|string} [iteratee=_.identity]
-         *  The iteratee invoked per element.
-         * @returns {*} Returns the minimum value.
+         * @param {Array} array 要迭代的数组。
+         * @param {Array|Function|Object|string} [iteratee=_.identity] 调用每个元素的迭代函数。
+         * @returns {*} 返回最小的值。
          * @example
          *
          * var objects = [{ 'n': 1 }, { 'n': 2 }];
@@ -6202,11 +6212,12 @@
         }
 
         /**
-         * @since 4.7.0
+         * 两个数相乘。
+         * 
          * @category Math
-         * @param {number} multiplier The first number in a multiplication.
-         * @param {number} multiplicand The second number in a multiplication.
-         * @returns {number} Returns the product.
+         * @param {number} multiplier 相乘的第一个数。
+         * @param {number} multiplicand 相乘的第二个数。
+         * @returns {number} 返回乘积。
          * @example
          *
          * _.multiply(6, 4);
@@ -6217,10 +6228,12 @@
         }
 
         /**
+         * 根据 precision（精度） 四舍五入 number。
+         * 
          * @category Math
-         * @param {number} number The number to round.
-         * @param {number} [precision=0] The precision to round to.
-         * @returns {number} Returns the rounded number.
+         * @param {number} number 要四舍五入的数字。
+         * @param {number} [precision=0] 四舍五入的精度。
+         * @returns {number} 返回四舍五入的数字。
          * @example
          *
          * _.round(4.006);
@@ -6232,40 +6245,56 @@
          * _.round(4060, -2);
          * // => 4100
          */
-        var round = createRound('round');
+        function round(number, precision=0) {
+            var temp = Math.pow(10, precision);
+            return Math.round(number * temp) / temp;
+        }
 
         /**
+         * 两数相减
+         * 
          * @category Math
-         * @param {number} minuend The first number in a subtraction.
-         * @param {number} subtrahend The second number in a subtraction.
-         * @returns {number} Returns the difference.
+         * @param {number} minuend 相减的第一个数
+         * @param {number} subtrahend 相减的第二个数
+         * @returns {number} 返回差
          * @example
          *
          * _.subtract(6, 4);
          * // => 2
          */
-        var subtract = createMathOperation(function(minuend, subtrahend) {
-          return minuend - subtrahend;
-        });
+        function subtract(minuend, subtrahend) {
+            return minuend - subtrahend;
+        }
 
         /**
+         * 计算 array 中值的总和.
+         * 
          * @category Math
-         * @param {Array} array The array to iterate over.
-         * @returns {number} Returns the sum.
+         * @param {Array} array 要迭代的数组。
+         * @returns {number} 返回总和。
          * @example
          *
          * _.sum([4, 2, 8, 6]);
          * // => 20
          */
         function sum(array) {
+            var result = 0;
+            if (array && array.length) {
+                for (var i = 0; i < array.length; i++) {
+                    result += array[i];
+                }
+            }
+            return result;
         }
 
         /**
+         * 这个方法类似 `_.summin` 除了它接受 iteratee 来调用 array中的每一个元素，来生成其值排序的标准。
+         * iteratee 会调用1个参数: (value) 。
+         * 
          * @category Math
-         * @param {Array} array The array to iterate over.
-         * @param {Array|Function|Object|string} [iteratee=_.identity]
-         *  The iteratee invoked per element.
-         * @returns {number} Returns the sum.
+         * @param {Array} array 要迭代的数组。
+         * @param {Array|Function|Object|string} [iteratee=_.identity] 调用每个元素的迭代函数。
+         * @returns {number} 返回总和。
          * @example
          *
          * var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
