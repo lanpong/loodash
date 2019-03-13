@@ -3282,8 +3282,8 @@
          * // => false
          */
         function isLength(value) {
-        return typeof value == 'number' &&
-            value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+            return typeof value == 'number' &&
+                value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
         }
 
         /**
@@ -3306,8 +3306,8 @@
          * // => false
          */
         function isObject(value) {
-        var type = typeof value;
-        return !!value && (type == 'object' || type == 'function');
+            var type = typeof value;
+            return !!value && (type == 'object' || type == 'function');
         }
 
         /**
@@ -3330,7 +3330,7 @@
          * // => false
          */
         function isObjectLike(value) {
-        return !!value && typeof value == 'object';
+            return !!value && typeof value == 'object';
         }
 
         /**
@@ -3417,7 +3417,7 @@
          * // => false
          */
         function isNaN(value) {
-        return isNumber(value) && value != +value;
+            return isNumber(value) && value != +value;
         }
 
         /**
@@ -3451,7 +3451,7 @@
          * // => false
          */
         function isNull(value) {
-        return value === null;
+            return value === null;
         }
 
         /**
@@ -3471,7 +3471,7 @@
          * // => false
          */
         function isNil(value) {
-        return value == null;
+            return value == null;
         }
 
         /**
@@ -3650,7 +3650,7 @@
          * // => false
          */
         function isUndefined(value) {
-        return value === undefined;
+            return value === undefined;
         }
 
         /**
@@ -6203,8 +6203,7 @@
          *
          * _.minBy(objects, function(o) { return o.n; });
          * // => { 'n': 1 }
-         *
-         * // The `_.property` iteratee shorthand.
+         *.
          * _.minBy(objects, 'n');
          * // => { 'n': 1 }
          */
