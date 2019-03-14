@@ -6,10 +6,11 @@
         /**
          * 将数组（array）拆分成多个 size 长度的区块，并将这些区块组成一个新数组。
          * 如果 array 无法被分割成全部等长的区块，那么最后剩余的元素将组成一个区块。
+         * 
          * @category Array
-         * @param {Array} array 需要处理的数组
-         * @param {number} [size=1] 每个数组区块的长度
-         * @returns {Array} 返回一个包含拆分区块的新数组
+         * @param {Array} array 需要处理的数组。
+         * @param {number} [size=1] 每个数组区块的长度。
+         * @returns {Array} 返回一个包含拆分区块的新数组。
          * @example
          * _.chunk([1, 2, 3, 4], 2)
          * // => [[1, 2], [3, 4]]
@@ -30,10 +31,11 @@
 
         /**
          * 创建一个删除了所有 false 值的数组。
-         * false，null，0，“”，undefined 和 NaN 的值都是 false
+         * false，null，0，“”，undefined 和 NaN 的值都是 false。
+         * 
          * @category Array
-         * @param {Array} array 待处理的数组
-         * @returns {Array} 返回过滤掉假值的新数组
+         * @param {Array} array 待处理的数组。
+         * @returns {Array} 返回过滤掉假值的新数组。
          * @example
          *
          * _.compact([0, 1, false, 2, '', 3]);
@@ -56,11 +58,12 @@
         }
 
         /**
-         * 创建一个新数组，将 array 与任何数组或值连接在一起
+         * 创建一个新数组，将 array 与任何数组或值连接在一起。
+         * 
          * @category Array
-         * @param {Array} array 被连接的数组
-         * @param {...*} [values] 连接的值
-         * @returns {Array} 返回连接后的新数组
+         * @param {Array} array 被连接的数组。
+         * @param {...*} [values] 连接的值。
+         * @returns {Array} 返回连接后的新数组。
          * @example
          *
          * var array = [1];
@@ -92,11 +95,12 @@
         }
 
         /**
-         * 创建一个具有唯一array值的数组，每个值不包含在其他给定的数组中。
+         * 创建一个具有唯一 array 值的数组，每个值不包含在其他给定的数组中。
+         * 
          * @category Array
-         * @param {Array} array 要检查的数组
-         * @param {...Array} [values] 排除的值
-         * @returns {Array} 返回一个过滤值后的新数组
+         * @param {Array} array 要检查的数组。
+         * @param {...Array} [values] 排除的值。
+         * @returns {Array} 返回一个过滤值后的新数组。
          * @example
          *
          * _.difference([3, 2, 1], [4, 2]);
@@ -155,10 +159,11 @@
 
         /**
          *创建一个切片数组，去除 array 前面的 n 个元素。(n默认值为1)
+
          * @category Array
-         * @param {Array} array 要查询的数组
-         * @param {number} [n=1] 要去除的元素个数
-         * @returns {Array} 返回 array 剩余切片
+         * @param {Array} array 要查询的数组。
+         * @param {number} [n=1] 要去除的元素个数。
+         * @returns {Array} 返回 array 剩余切片。
          * @example
          *
          * _.drop([1, 2, 3]);
@@ -186,10 +191,11 @@
 
         /**
          * 创建一个切片数组，去除 array 尾部的 n 个元素。n 默认值为 1。
+         * 
          * @category Array
-         * @param {Array} array 要查询的数组
-         * @param {number} [n=1] 要去除的元素个数
-         * @returns {Array} 返回array剩余切片
+         * @param {Array} array 要查询的数组。
+         * @param {number} [n=1] 要去除的元素个数。
+         * @returns {Array} 返回array剩余切片。
          * @example
          *
          * _.dropRight([1, 2, 3]);
@@ -283,12 +289,13 @@
 
         /**
          * 使用 value 值来填充（替换） array，从 start 位置开始, 到 end 位置结束（但不包含 end 位置）。
-         * Note: 这个方法会改变 array
+         * Note: 这个方法会改变 array。
+         * 
          * @category Array
-         * @param {Array} array 要填充改变的数组
-         * @param {*} value 填充给 `array` 的值
-         * @param {number} [start=0] 开始位置（默认0）1
-         * @param {number} [end=array.length] 结束位置（默认array.length）
+         * @param {Array} array 要填充改变的数组。
+         * @param {*} value 填充给 `array` 的值。
+         * @param {number} [start=0] 开始位置（默认0）1。
+         * @param {number} [end=array.length] 结束位置（默认array.length）。
          * @returns {Array} 返回 `array`
          * @example
          *
@@ -455,10 +462,11 @@
         }
 
         /**
-         * 获取数组 array 的第一个元素
+         * 获取数组 array 的第一个元素。
+         * 
          * @category Array
-         * @param {Array} array 要查询的数组
-         * @returns {*} 返回数组 `array` 的第一个元素
+         * @param {Array} array 要查询的数组。
+         * @returns {*} 返回数组 `array` 的第一个元素。
          * @example
          *
          * _.head([1, 2, 3]);
@@ -730,10 +738,11 @@
 
         /**
          * 反转 array，使得第一个元素变为最后一个元素，第二个元素变为倒数第二个元素，依次类推。
-         * Note: 这个方法会改变原数组 array
+         * Note: 这个方法会改变原数组 array。
+         * 
          * @category Array
-         * @param {Array} array 要修改的数组
-         * @returns {Array} 返回 `array`
+         * @param {Array} array 要修改的数组。
+         * @returns {Array} 返回 `array`。
          * @example
          *
          * var array = [1, 2, 3];
@@ -762,11 +771,12 @@
 
         /**
          * 裁剪数组 array，从 start 位置开始到end结束，但不包括 end 本身的位置。
+         * 
          * @category Array
-         * @param {Array} array 要裁剪数组
-         * @param {number} [start=0] 开始位置
-         * @param {number} [end=array.length] 结束位置
-         * @returns {Array} 返回数组 `array` 裁剪部分的新数组
+         * @param {Array} array 要裁剪数组。
+         * @param {number} [start=0] 开始位置。
+         * @param {number} [end=array.length] 结束位置。
+         * @returns {Array} 返回数组 `array` 裁剪部分的新数组。
          */
         function slice(array, start, end) {
             var length = array.length;
@@ -938,11 +948,12 @@
         }
 
         /**
-         * 创建一个数组切片，从 array 数组的起始元素开始提取 n 个元素
+         * 创建一个数组切片，从 array 数组的起始元素开始提取 n 个元素。
+         * 
          * @category Array
-         * @param {Array} array 要检索的数组
-         * @param {number} [n=1] 需要提取元素的个数
-         * @returns {Array} 返回 `array` 数组的切片（从起始元素开始n个元素）
+         * @param {Array} array 要检索的数组。
+         * @param {number} [n=1] 需要提取元素的个数。
+         * @returns {Array} 返回 `array` 数组的切片（从起始元素开始n个元素）。
          * @example
          *
          * _.take([1, 2, 3]);
@@ -1064,10 +1075,11 @@
         }
 
         /**
-         * arrays (数组)的并集，按顺序返回，返回数组的元素是唯一的
+         * arrays (数组)的并集，按顺序返回，返回数组的元素是唯一的。
+         * 
          * @category Array
-         * @param {...Array} [arrays] 要检查的数组
-         * @returns {Array} 返回一个新的联合数组
+         * @param {...Array} [arrays] 要检查的数组。
+         * @returns {Array} 返回一个新的联合数组。
          * @example
          *
          * _.union([2, 1], [4, 2], [1, 2]);
@@ -1126,9 +1138,10 @@
 
         /**
          * 创建一个去重后的 array 数组副本。
+         * 
          * @category Array
-         * @param {Array} array 要检查的数组
-         * @returns {Array} 返回新的去重后的数组
+         * @param {Array} array 要检查的数组。
+         * @returns {Array} 返回新的去重后的数组。
          * @example
          *
          * _.uniq([2, 1, 2]);
