@@ -1547,24 +1547,24 @@
 
         /**
          * 
-        * @category Seq
-        * @param {*} value The value to plant.
-        * @returns {Object} Returns the new `lodash` wrapper instance.
-        * @example
-        *
-        * function square(n) {
-        *   return n * n;
-        * }
-        *
-        * var wrapped = _([1, 2]).map(square);
-        * var other = wrapped.plant([3, 4]);
-        *
-        * other.value();
-        * // => [9, 16]
-        *
-        * wrapped.value();
-        * // => [1, 4]
-        */
+         * @category Seq
+         * @param {*} value The value to plant.
+         * @returns {Object} Returns the new `lodash` wrapper instance.
+         * @example
+         *
+         * function square(n) {
+         *   return n * n;
+         * }
+         *
+         * var wrapped = _([1, 2]).map(square);
+         * var other = wrapped.plant([3, 4]);
+         *
+         * other.value();
+         * // => [9, 16]
+         *
+         * wrapped.value();
+         * // => [1, 4]
+         */
         function wrapperPlant(value) {
         }
 
